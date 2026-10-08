@@ -9,13 +9,14 @@ The app reads `manifest.json` from the **latest** release
 own release, so a phone mid-download keeps fetching one consistent version. Every release
 must therefore attach a manifest listing **all** current packs.
 
-Packs are built with `msafiri-packer` in the app repo:
+Packs are collected from Copernicus and built with `fetch-glo30.sh` and `msafiri-packer` in the
+app repository; the full procedure, including each pack's rectangles, is in
+[`packer/README.md`](https://github.com/chedda-labs/msafiri/blob/main/packer/README.md).
 
-```sh
-cargo run --release -p msafiri-packer -- --src glo30/ --out out/ --id central-kenya \
-  --name "Central Kenya" --bounds 36.5,-1.5,37.6,0 --arcsec 3 --version 1 \
-  --base-url https://github.com/chedda-labs/msafiri-packs/releases/download/central-kenya-v1
-```
+| Release | Pack | Size |
+|---|---|---|
+| `central-kenya-v1` | Central Kenya: Nairobi, Kiambu, Murang'a, Kirinyaga, Nyeri | 2.9 MB |
+| `rift-valley-v1` | Rift Valley: Turkana to Kajiado, with Mount Elgon and Kilimanjaro | 31.0 MB |
 
 ## Data
 
